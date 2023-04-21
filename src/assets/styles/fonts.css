@@ -1,0 +1,40 @@
+/* #CSS.1 */
+
+:root {
+  --2px: 0.125rem;
+  --4px: 0.25rem;
+  --8px: 0.5rem;
+  --12px: 0.75rem;
+  --16px: 1rem;
+  --24px: 1.5rem;
+  --32px: 2rem;
+  --40px: 2.5rem;
+  --48px: 3rem;
+  --56px: 3.5rem;
+  --64px: 4rem;
+
+  --regular: 400;
+  --medium: 500;
+  --semi-bold: 600;
+  --bold: 700;
+
+  --fonts-body: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+  --fonts-header-bold: 'Dharma Gothic E ExBold';
+  --fonts-header-light: 'Dharma Gothic E ExLight';
+}
+
+@layer fonts {
+  @font-face {
+    font-family: 'Dharma Gothic E ExBold';
+    src: url('../fonts/DharmaGothicE-ExBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Dharma Gothic E ExLight';
+    src: url('../fonts/DharmaGothicE-ExLight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}

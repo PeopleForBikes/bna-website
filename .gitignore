@@ -33,3 +33,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# VSCode project settings
+.vscode
+
+# git comments & notes
+z*.md
