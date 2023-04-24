@@ -3,18 +3,9 @@ import '@Styles/resets.css';
 import '@Styles/base.css';
 import '@Styles/layout.css';
 import '@Styles/themes.css';
-import './globals.css';
 
 import { ReactNode } from 'react';
-// import { Footer, Header } from '@Components';
-import { Montserrat } from 'next/font/google';
-
-
-const montserrat = Montserrat({
-  display: 'swap',
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-});
+import { Footer, Header } from '@Components';
 
 
 function RootLayout({ children }: { children: ReactNode }) {
@@ -29,10 +20,10 @@ function RootLayout({ children }: { children: ReactNode }) {
 
         <style>@layer fonts, resets, base, layout, page, theme;</style>
       </head>
-      <body className={montserrat.className}>
-        {/* <Header /> */}
+      <body>
+        <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
