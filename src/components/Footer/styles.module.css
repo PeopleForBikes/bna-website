@@ -1,5 +1,28 @@
 .footer {
-  height: 60px;
+  height: 100%;
+  padding: 40px 20px;
+
   color: var(--secondary-color);
   background-color: var(--primary-color);
+
+  background-image: url(~@Images/web-racing-stripe.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: top right;
+
+
+  & > nav {
+    margin-top: 10px;
+
+    > ul {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-between;
+
+      & li {
+        padding: 10px;
+      }
+    }
+  }
 }

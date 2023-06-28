@@ -1,5 +1,5 @@
 @tailwind base;
-@tailwind components;
+/* @tailwind components; */
 @tailwind utilities;
 
 
@@ -18,10 +18,32 @@
 }
 
 body {
+  color: var(--font-light);
   font-family: var(--fonts-body) ;
+  font-size: var(--16px);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat SemiBold';
+}
+h1 {
+  font-size: var(--40px);
+}
 h2 {
-  font-family: var(--fonts-header-bold);
-  @apply text-5xl;
+  font-size: var(--28px);
+}
+h3 {
+  font-size: var(--22px);
+}
+
+a {
+  color: var(--primary-link-color);
+}
+
+.borderBottomDecor::after {
+  content: '';
+  width: 10rem;
+  border-top: 1px solid #9da0a7;
+  display: block;
+  margin: 2rem auto;
 }

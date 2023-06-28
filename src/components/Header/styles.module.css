@@ -1,5 +1,39 @@
 .header {
-  height: 60px;
-  color: var(--secondary-color);
+  height: 100%;
+  padding: 5px 20px;
   background-color: var(--primary-color);
+
+  & nav {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+
+.navLeft {
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.navRight {
+  width: 100%;
+
+  & ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    & li {
+      font-family: Montserrat SemiBold;
+      font-size: var(--14px);
+
+      & a {
+        display: inline-block;
+        padding: 18px 20px;
+      }
+      & a:active {
+        box-shadow: 0 2px 0 0 var(--primary-link-color);
+      }
+    }
+  }
 }

@@ -1,8 +1,9 @@
 import '@Styles/fonts.css';
 import '@Styles/resets.css';
-import '@Styles/base.css';
-import '@Styles/layout.css';
 import '@Styles/themes.css';
+import '@Styles/layout.css';
+import '@Styles/base.css';
+import '@Styles/utility-first.css';
 
 import { ReactNode } from 'react';
 import { Footer, Header } from '@Components';
