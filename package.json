@@ -3,17 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@types/node": "20.3.2",
+    "@types/node": "20.3.3",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
     "del-cli": "^5.0.0",
-    "eslint": "8.43.0",
-    "eslint-config-next": "13.4.7",
-    "next": "13.4.7",
-    "postcss": "8.4.24",
-    "postcss-nesting": "^11.3.0",
-    "typescript": "5.1.5"
+    "eslint": "8.44.0",
+    "eslint-config-next": "13.4.8",
+    "next": "13.4.8",
+    "postcss": "^8.4.24",
+    "postcss-custom-media": "^10.0.0",
+    "postcss-import": "^15.1.0",
+    "postcss-media-minmax": "^5.0.0",
+    "postcss-nesting": "^12.0.0",
+    "typescript": "5.1.6"
   },
   "dependencies": {
     "react": "18.2.0",

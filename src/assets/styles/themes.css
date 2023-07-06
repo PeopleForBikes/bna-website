@@ -1,9 +1,22 @@
-:root {
-  --deep-navy:  #072040ff;
-  --cyan:       #439CD6FF;
-  --red:        #C6322CFF;
-  --gray:       #8A898DFF;
-  --coal:       #4D4D4FFF;
-  --hover:      #FAFAFAFF;
-  --white:      #FFFFFF;
+@layer themes {
+  :root {
+    --deep-navy:  #00263eff;
+    --cyan:       #009edbff;
+    --red:        #d71920ff;
+    --gray:       #8b8a8dff;
+    --coal:       #4d4d4fff;
+    --hover:      #fafafaff;
+    --white:      #ffffffff;
+    --yellow:     #fadb4aff;
+
+    --active-cyan: #2F88C2;
+    --active-yellow: #F0D140;
+
+
+    /* menu shadow */
+    --menu-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.15);
+
+    /* card shadow */
+    --card-shadow: 0px 3px 9px 0px rgba(107, 108, 126, 0.02), 0px 10px 24px 0px rgba(107, 108, 126, 0.03), 0px 27px 63px 0px rgba(107, 108, 126, 0.04), 0px 54px 145px 0px rgba(107, 108, 126, 0.06);
+  }
 }

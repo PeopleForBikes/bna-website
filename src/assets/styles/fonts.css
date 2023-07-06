@@ -27,36 +27,34 @@
   --extra-bold:   800;
   --black:        900;
 
-  --letter-spacing-0: 0.0625rem;    /* 1px     */
-  --letter-spacing-1: 0.09375rem;   /* 1.5px   */
-  --letter-spacing-2: 0.078125rem;  /* 1.25px  */
-  --letter-spacing-3: 0.053125rem;  /* 0.85px  */
-  --letter-spacing-4: 0.04375rem;   /* 0.7px   */
-  --letter-spacing-5: 0.0390625rem; /* 0.625px */
-  --letter-spacing-6: 0.034375rem;  /* 0.55px  */
+  --letter-spacing-0_55px:  0.034375rem;
+  --letter-spacing-0_625px: 0.0390625rem;
+  --letter-spacing-0_7px:   0.04375rem;
+  --letter-spacing-0_85px:  0.053125rem;
+  --letter-spacing-1px:     0.0625rem;
+  --letter-spacing-1_25px:  0.078125rem;
+  --letter-spacing-1_5px:   0.09375rem;
 
-  --lineheight-00: 0.9rem:    /* 14.4px */
+  --lineheight-00: 0.9rem;    /* 14.4px */
   --lineheight-01: 1.0375rem; /* 16.5px */
-  --lineheight-02: 1.05rem    /* 16.8px */
+  --lineheight-02: 1.05rem;    /* 16.8px */
   --lineheight-03: 1.2rem;    /* 19.2px */
   --lineheight-04: 1.3125rem; /* 21px   */
   --lineheight-05: 1.35rem;   /* 21.6px */
   --lineheight-06: 1.5rem;    /* 24px   */
   --lineheight-07: 1.65rem;   /* 26.4px */
-  --lineheight-08: 1.65rem:   /* 28.8px */
+  --lineheight-08: 1.65rem;   /* 28.8px */
   --lineheight-09: 1.875rem;  /* 30px   */
   --lineheight-10: 2.25rem;   /* 36px   */
   --lineheight-11: 2.55rem;   /* 40.8px */
   --lineheight-12: 2.625rem;  /* 42px   */
-  --lineheight-13: 3.75rem;   /* 60px   */
-  --lineheight-14: 4.5rem;    /* 72px   */
+  --lineheight-13: 3rem;      /* 48px   */
+  --lineheight-14: 3.75rem;   /* 60px   */
+  --lineheight-15: 4.5rem;    /* 72px   */
 
   --fonts-body: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
   --fonts-header-bold: 'Dharma Gothic E ExBold';
   --fonts-header-light: 'Dharma Gothic E ExLight';
-
-  --font-light: #FFFFFF;
-  --font-dark: #000000;
 }
 
 @layer fonts {
