@@ -1,17 +1,18 @@
 import '@Styles/fonts.css';
 import '@Styles/resets.css';
-import '@Styles/themes.css';
-import '@Styles/layout.css';
 import '@Styles/base.css';
-import '@Styles/utility-first.css';
+import '@Styles/layout.css';
+import '@Styles/themes.css';
+import '@Styles/components.css';
+import '@Styles/utilities.css';
 
 import { ReactNode } from 'react';
-import { Footer, Header } from '@Components';
+import { Footer } from '@Components';
 
 
 function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html data-theme="light" lang="en-US">
+    <html lang="en-US">
       <head>
         {/* #Favicon.1 */}
         <link rel="icon" sizes="any" href="/favicon.ico" />
@@ -19,10 +20,9 @@ function RootLayout({ children }: { children: ReactNode }) {
         <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="favicon/manifest.webmanifest" />
 
-        <style>@layer fonts, resets, base, layout, page, theme;</style>
+        <style>@layer fonts, resets, base, layout, theme, components, utilities;</style>
       </head>
-      <body>
-        <Header />
+      <body id='body'>
         {children}
         <Footer />
       </body>

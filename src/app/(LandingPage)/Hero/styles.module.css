@@ -1,0 +1,37 @@
+.hero {
+  height: 710px;
+
+  background-image: url('../../../assets/images/hero_w_710.png');
+  background-repeat: no-repeat;
+  background-position: -706px 0px;
+  background-size: auto 710px;
+}
+
+.wrapper {
+  height: inherit;
+  position: relative;
+  background: linear-gradient(223deg, rgba(0, 0, 0, 0.43) 0%, rgba(0, 0, 0, 0.00) 88.83%);
+}
+
+.search {
+  position: absolute;
+  top: 172px;
+  left: 0;
+
+  padding: 0 16px;
+}
+
+.container {
+  padding: 90px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.60);
+  background: rgba(0, 0, 0, 0.60);
+  box-shadow: var(--card-shadow);
+}
+
+.title {
+  font-size: var(--34px);
+  line-height: var(--lineheight-10);
+  letter-spacing: var(--letter-spacing-0_85px);
+  color: var(--white);
+}

@@ -1,30 +1,41 @@
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import logo from '@Images/bna-logo-horizontal-2021.png'
+import logo from '@Images/logo-bna-light.svg';
+import Icons from '@Icons';
+import PrimaryNavigation from './PrimaryNavigation';
+
 import styles from './styles.module.css';
 
 
 function Header() {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   return (
     <header className={styles.header}>
-      <nav aria-labelledby="primary-navigation">
 
-        <div className={styles.navLeft}>
-          <Link href="/">
-            <Image src={logo} alt="bna logo" height="40" />
-          </Link>
-        </div>
+      <div className={styles.navLeft}>
+        <Link href="/">
+          <Image
+            src={logo}
+            width={178}
+            height={43}
+            alt="BNA Logo"
+          />
+        </Link>
 
-        <div className={styles.navRight}>
-          <ul id="primary-navigation">
-            <li><Link href="/locations">ALL LOCATIONS</Link></li>
-            <li><Link href="/about/methodology">METHODOLOGY</Link></li>
-            <li><Link href="https://cityratings.peopleforbikes.org">CITY RATINGS</Link></li>
-            <li><Link href="https://www.peopleforbikes.org">PEOPLEFORBIKES</Link></li>
-          </ul>
+        <div className={styles['toggle-menu']} onClick={() => setMenuIsOpen(!menuIsOpen)}>
+          {menuIsOpen
+            ? <Icons name='xmark' className={styles.xmark} />
+            : <Icons name='bars' className={styles.bars} color='var(--white)' />
+          }
         </div>
-      </nav>
+      </div>
+
+      <PrimaryNavigation menuIsOpen={menuIsOpen} />
 
     </header>
   );

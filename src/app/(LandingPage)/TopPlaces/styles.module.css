@@ -1,0 +1,15 @@
+.layout {
+  padding: 70px 20px;
+}
+
+.title {
+  font-size: var(--34px);
+  line-height: var(--lineheight-06);
+  letter-spacing: var(--letter-spacing-0_7px);
+  color: var(--deep-navy);
+  text-transform: uppercase;
+
+  text-align: center;
+}
+
+

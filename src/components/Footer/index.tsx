@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import FooterLogo from '@Images/people-for-bikes-logo.svg';
 
+import FooterLogo from '@Images/people-for-bikes-logo.svg';
 import styles from './styles.module.css';
 
 
