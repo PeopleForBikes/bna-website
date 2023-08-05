@@ -1,4 +1,4 @@
-function BNALogo({ className = "" }) {
+function BNALogo({ className="" }) {
   return (
     <svg
       className={className}

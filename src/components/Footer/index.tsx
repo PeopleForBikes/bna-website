@@ -1,16 +1,21 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import FooterLogo from '@Images/people-for-bikes-logo.svg';
+// import FooterLogo from '@Images/people-for-bikes-logo.svg';
 import styles from './styles.module.css';
 
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles['footer']}>
 
       <Link href="https://www.peopleforbikes.org">
-        <Image src={FooterLogo} alt="bna logo" height="40" />
+        <svg><use
+            href="#logo-bna-light"
+            width={178}
+            height={43}
+          />
+        </svg>
       </Link>
 
       <nav aria-labelledby="footer-navigation">

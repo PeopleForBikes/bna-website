@@ -13,6 +13,7 @@ import BNALogo from './BNALogo';
 // import LinkedIn from './LinkedIn';
 // import List from './List';
 // import LocationDot from './LocationDot';
+import LogoBNALight from './LogoBNALight';
 // import LocationPerson from './LocationPerson';
 // import Map from './Map';
 // import ObjectsColumn from './ObjectsColumn';
@@ -50,6 +51,7 @@ function Icons({ name, ...props }: Props): JSX.Element {
     // 'list':                 <List {...props} />,
     // 'location-dot':         <LocationDot {...props} />,
     // 'location-person':      <LocationPerson {...props} />,
+    'logo-bna-light':      <LogoBNALight {...props} />,
     // 'map':                  <Map {...props} />,
     // 'objects-column':       <ObjectsColumn {...props} />,
     // 'print':                <Print {...props} />,
@@ -66,5 +68,31 @@ function Icons({ name, ...props }: Props): JSX.Element {
   return icons[name];
 }
 
+function LandingPageIcons() {
+  // #SVGs.1
+  return (
+    <svg>
+      <defs>
+        <symbol id="arrow-right">
+          <ArrowRight />
+        </symbol>
 
-export default Icons;
+        <symbol id="bars">
+          <Bars color='var(--white)' />
+        </symbol>
+
+        <symbol id="logo-bna-light">
+          <LogoBNALight />
+        </symbol>
+
+        <symbol id="xmark">
+          <Xmark />
+        </symbol>
+      </defs>
+    </svg>
+  );
+}
+
+
+export { Icons };
+export default LandingPageIcons;

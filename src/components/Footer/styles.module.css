@@ -2,8 +2,8 @@
   height: 100%;
   padding: 40px 20px;
 
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
+  color: var(--white);
+  background-color: var(--deep-navy);
 
   background-image: url(~@Images/web-racing-stripe.png);
   background-size: 80%;

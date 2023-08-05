@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 import styles from './styles.module.css';
@@ -11,6 +12,11 @@ function TopPlaces() {
       <ul className={styles['']}>
         <li className={styles['']}></li>
       </ul>
+
+      <Link href="/location">
+        More places
+        <svg> <use href="#bars" /></svg>
+      </Link>
     </section>
   );
 }

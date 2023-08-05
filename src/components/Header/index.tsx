@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import logo from '@Images/logo-bna-light.svg';
 import Icons from '@Icons';
 import PrimaryNavigation from './PrimaryNavigation';
 
@@ -15,22 +14,21 @@ function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
-    <header className={styles.header}>
-
-      <div className={styles.navLeft}>
+    <header className={styles['header']}>
+      <div className={styles['navLeft']}>
         <Link href="/">
-          <Image
-            src={logo}
-            width={178}
-            height={43}
-            alt="BNA Logo"
-          />
+          <svg><use
+              href="#logo-bna-light"
+              width={178}
+              height={43}
+            />
+          </svg>
         </Link>
 
         <div className={styles['toggle-menu']} onClick={() => setMenuIsOpen(!menuIsOpen)}>
           {menuIsOpen
-            ? <Icons name='xmark' className={styles.xmark} />
-            : <Icons name='bars' className={styles.bars} color='var(--white)' />
+            ? <svg className={styles['svg-xmark']}><use href="#xmark" /></svg>
+            : <svg className={styles['svg-bars']}><use href="#bars" /></svg>
           }
         </div>
       </div>

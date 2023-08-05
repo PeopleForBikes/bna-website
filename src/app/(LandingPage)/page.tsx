@@ -5,19 +5,25 @@ import TopPlaces from './TopPlaces';
 import AddYourPlace from './AddYourPlace';
 import CalculateScore from './CalculateScore';
 
-import styles from './styles.module.css';
+import LandingPageIcons from '@/components/Icons';
 
 
-function Home() {
+function LandingPage() {
   return (
-    <main className="main-layout page-layout">
-      <Hero />
-      <TopPlaces />
-      <AddYourPlace />
-      <CalculateScore />
-    </main>
+    <>
+      <div style={{ display: "none" }}>
+        <LandingPageIcons />
+      </div>
+
+      <main className="main-layout page-layout">
+        <Hero />
+        <TopPlaces />
+        <AddYourPlace />
+        <CalculateScore />
+      </main>
+    </>
   );
 }
 
 
-export default Home;
+export default LandingPage;

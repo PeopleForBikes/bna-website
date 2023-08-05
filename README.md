@@ -12,3 +12,6 @@
 
 ## CSS
 1. [REM vs PX](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility)
+
+## SVGs
+1. [SVGs](https://kurtextrem.de/posts/svg-in-js#performance-vs-time-to-load-to-inline-or-not-to-inline)

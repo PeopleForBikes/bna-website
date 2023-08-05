@@ -1,10 +1,10 @@
 .hero {
   height: 710px;
 
-  background-image: url('../../../assets/images/hero_w_710.png');
+  background-image: url('~@Images/hero_w_710.png');
   background-repeat: no-repeat;
-  background-position: -706px 0px;
-  background-size: auto 710px;
+  background-position: -668px 0px;
+  background-size: auto 680px;
 }
 
 .wrapper {
