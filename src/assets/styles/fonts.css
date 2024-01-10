@@ -13,7 +13,7 @@
   --28px: 1.75rem;
   --30px: 1.875rem;
   --34px: 2.125rem;
-  --40px: 3.5rem;
+  --40px: 2.5rem;
   --50px: 3.125rem;
   --60px: 3.75rem;
 
@@ -27,30 +27,30 @@
   --extra-bold:   800;
   --black:        900;
 
-  --letter-spacing-0_55px:  0.034375rem;
-  --letter-spacing-0_625px: 0.0390625rem;
-  --letter-spacing-0_7px:   0.04375rem;
-  --letter-spacing-0_85px:  0.053125rem;
-  --letter-spacing-1px:     0.0625rem;
-  --letter-spacing-1_25px:  0.078125rem;
-  --letter-spacing-1_5px:   0.09375rem;
+  /* letter-spacing */
+  --ls-0_55px:  0.034375rem;
+  --ls-0_625px: 0.0390625rem;
+  --ls-0_7px:   0.04375rem;
+  --ls-0_85px:  0.053125rem;
+  --ls-1px:     0.0625rem;
+  --ls-1_25px:  0.078125rem;
+  --ls-1_5px:   0.09375rem;
 
-  --lineheight-00: 0.9rem;    /* 14.4px */
-  --lineheight-01: 1.0375rem; /* 16.5px */
-  --lineheight-02: 1.05rem;    /* 16.8px */
-  --lineheight-03: 1.2rem;    /* 19.2px */
-  --lineheight-04: 1.3125rem; /* 21px   */
-  --lineheight-05: 1.35rem;   /* 21.6px */
-  --lineheight-06: 1.5rem;    /* 24px   */
-  --lineheight-07: 1.65rem;   /* 26.4px */
-  --lineheight-08: 1.65rem;   /* 28.8px */
-  --lineheight-09: 1.875rem;  /* 30px   */
-  --lineheight-10: 2.25rem;   /* 36px   */
-  --lineheight-11: 2.55rem;   /* 40.8px */
-  --lineheight-12: 2.625rem;  /* 42px   */
-  --lineheight-13: 3rem;      /* 48px   */
-  --lineheight-14: 3.75rem;   /* 60px   */
-  --lineheight-15: 4.5rem;    /* 72px   */
+  /* line-height */
+  --lh-14px: 0.875rem;
+  --lh-16px: 1rem;
+  --lh-19px: 1.1875rem;
+  --lh-21px: 1.3125rem;
+  --lh-24px: 1.5rem;
+  --lh-26px: 1.625rem;
+  --lh-28px: 1.75rem;
+  --lh-30px: 1.875rem;
+  --lh-36px: 2.25rem;
+  --lh-40px: 2.5rem;
+  --lh-42px: 2.625rem;
+  --lh-48px: 3rem;
+  --lh-60px: 3.75rem;
+  --lh-72px: 4.5rem;
 
   --fonts-body: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
   --fonts-header-bold: 'Dharma Gothic E ExBold';
@@ -60,41 +60,46 @@
 @layer fonts {
   @font-face {
     font-family: 'Dharma Gothic E';
-    font-weight: var(--bold);
     font-style: normal;
-    src: local('Dharma Gothic E Bold'),
+    font-weight: 700;
+    src:
+      local('Dharma Gothic E Bold'),
       url('../fonts/DharmaGothicE-Bold.otf') format('opentype');
   }
 
   @font-face {
     font-family: 'Montserrat';
-    font-weight: var(--extra-bold);
     font-style: normal;
-    src: local('Montserrat Extra Bold'),
+    font-weight: 800;
+    src:
+      local('Montserrat Extra Bold'),
       url('../fonts/Montserrat-ExtraBold.otf') format('opentype');
   }
 
   @font-face {
     font-family: 'Montserrat';
-    font-weight: var(--bold);
     font-style: normal;
-    src: local('Montserrat Bold'),
+    font-weight: 700;
+    src:
+      local('Montserrat Bold'),
       url('../fonts/Montserrat-Bold.otf') format('opentype');
   }
 
   @font-face {
     font-family: 'Montserrat';
-    font-weight: var(--medium);
     font-style: normal;
-    src: local('Montserrat Medium'),
+    font-weight: 500;
+    src:
+      local('Montserrat Medium'),
       url('../fonts/Montserrat-Medium.otf') format('opentype');
   }
 
   @font-face {
     font-family: 'Montserrat';
-    font-weight: var(--regular);
     font-style: normal;
-    src: local('Montserrat Regular'),
+    font-weight: 400;
+    src:
+      local('Montserrat Regular'),
       url('../fonts/Montserrat-Regular.otf') format('opentype');
   }
 }

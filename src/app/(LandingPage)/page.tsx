@@ -4,8 +4,11 @@ import Hero from './Hero';
 import TopPlaces from './TopPlaces';
 import AddYourPlace from './AddYourPlace';
 import CalculateScore from './CalculateScore';
+import Explore from './Explore';
+import { Footer } from '@Components';
 
-import LandingPageIcons from '@/components/Icons';
+import LandingPageIcons from '@Components/Sprites';
+import Header from '@Components/Header';
 
 
 function LandingPage() {
@@ -16,10 +19,14 @@ function LandingPage() {
       </div>
 
       <main className="main-layout page-layout">
+        <Header />
+
         <Hero />
         <TopPlaces />
         <AddYourPlace />
         <CalculateScore />
+        <Explore />
+        <Footer />
       </main>
     </>
   );

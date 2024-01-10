@@ -1,0 +1,172 @@
+.layout {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: left;
+
+  padding: 70px 20px;
+}
+
+.title {
+  margin-block-end: 40px;
+  color: var(--deep-navy);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tablist-container {
+  width: 100%;
+  margin-block-end: 40px;
+  margin-inline-end: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tablist-container::-webkit-scrollbar {
+  /*Chrome, Safari, Edge*/
+  display: none;
+}
+
+.tablist {
+  padding: 8px;
+  width: fit-content;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  border: 1px solid var(--border-gray);
+
+  & > li {
+    padding: 6px 20px;
+  }
+  & > li:has(.tab[aria-selected="true"]) {
+    background-color: var(--deep-navy);
+  }
+}
+
+.tab {
+  font-family: Dharma Gothic E;
+  font-size: var(--22px);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: normal;
+  letter-spacing: var(--ls-0_55px);
+
+  color: var(--deep-navy);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.tab[aria-selected="true"] {
+  color: white;
+}
+.tab:focus-visible {
+  background-color: red;
+  color: blue;
+  outline: 0.2em solid transparent;
+}
+
+.tabpanel-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.tabpanel-title {
+  margin-block-end: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: Dharma Gothic E;
+  font-size: var(--28px);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: var(--lh-42px);
+  letter-spacing: var(--ls-0_7px);
+
+  color: var(--deep-navy);
+  text-transform: uppercase;
+}
+.tabpanel-description {
+  margin-block-end: 40px;
+  line-height: var(--lh-24px);
+}
+
+.visible {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+
+/* tab Panel Images */
+.tabpanel-image {
+  height: 476px;
+  width: 375px;
+}
+.image-1 {
+  background-image: url('~@Images/mobile-calculate-people.png');
+}
+.image-2 {
+  background-image: url('~@Images/mobile-calculate-core-service.png');
+}
+.image-3 {
+  background-image: url('~@Images/mobile-calculate-recreation.png');
+}
+.image-4 {
+  background-image: url('~@Images/mobile-calculate-opportunity.png');
+}
+.image-5 {
+  background-image: url('~@Images/mobile-calculate-shopping.png');
+}
+.image-6 {
+  background-image: url('~@Images/mobile-calculate-transit.png');
+}
+
+
+/* Icons */
+.icon {
+  height: 26px;
+  width: 26px;
+}
+
+
+@media (810px <= width) {
+  .layout {
+    padding: 50px 80px;
+  }
+
+  .tabpanel-content {
+    flex-flow: row-reverse;
+    align-items: flex-start;
+    column-gap: 40px;
+  }
+
+  .tabpanel-meta {
+    width: 100%;
+    max-width: 413px;
+    margin-top: 67px;
+  }
+
+  .tabpanel-image {
+    width: 100%;
+    background-position-x: center;
+  }
+
+  .tablist-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  .image-1 {
+    background-image: url('~@Images/calculate-people.png');
+    background-repeat: no-repeat;
+
+  }
+}
+
+@media (810px <= width) {
+
+ }

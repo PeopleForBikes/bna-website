@@ -10,17 +10,23 @@
   body {
     box-sizing: border-box;
 
-    font-family: Montserrat;
-    font-size: var(--16px);
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    font-family: 'Montserrat';
     font-weight: var(--regular);
-    line-height: var(--lineheight-06);
+    font-size: var(--16px);
+    line-height: normal;
     color: var(--deep-navy);
 
     background-color: var(--white);
   }
 
-  a {
+  a, a:visited, a:hover, a:active {
     text-decoration: none;
+    color: inherit;
   }
 
   fieldset {
@@ -36,13 +42,21 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Dharma Gothic E';
     font-weight: var(--bold);
+    line-height: normal;
     color: var(--deep-navy);
   }
 
   h1 {
     font-size: var(--40px);
-    line-height: normal;
-    letter-spacing: var(--letter-spacing-1px);
+    letter-spacing: var(--ls-1px);
+  }
+  h2 {
+    font-size: var(--34px);
+    letter-spacing: var(--ls-0_7px);
+  }
+  h3 {
+    font-size: var(--28px);
+    letter-spacing: var(--ls-0_7px);
   }
 
   button {
@@ -50,10 +64,18 @@
     background-color: transparent;
   }
 
-  @media (--mobile-landscape) {
+  @media (810px <= width) {
     h1 {
       font-size: var(--60px);
-      letter-spacing: var(--letter-spacing-1_5px);
+      letter-spacing: var(--ls-1_5px);
+    }
+    h2 {
+      font-size: var(--50px);
+      letter-spacing: var(--ls-1_25px);
+    }
+    h3 {
+      font-size: var(--34px);
+      letter-spacing: var(--ls-0_85px);
     }
   }
 }

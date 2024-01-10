@@ -5,7 +5,7 @@
 
     font-family: Montserrat;
     font-weight: var(--bold);
-    line-height: var(--lineheight-03);
+    line-height: var(--lh-03);
     text-transform: uppercase;
 
     cursor: pointer;

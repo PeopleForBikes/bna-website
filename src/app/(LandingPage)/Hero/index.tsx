@@ -9,18 +9,17 @@ import styles from './styles.module.css';
 function Hero() {
   return (
     <section className={styles['hero']}>
-      <div className={styles['wrapper']}>
-        <Header />
 
-        <aside className={styles['search']}>
-          <div className={styles['container']}>
-            <h2 className={styles['title']}>Bike network:<br/>Connecting people to their destinations</h2>
+      <div className={styles['gradient']}>
 
-            <FormSearch />
-          </div>
-        </aside>
+        <div className={styles['container']}>
+          <h2 className={styles['title']}>Bike network:<br/>Connecting people to their destinations</h2>
 
+          <FormSearch />
+        </div>
       </div>
+
+
     </section>
   );
 }

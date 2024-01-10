@@ -4,4 +4,14 @@
   @custom-media --tablet-portrait  (768px <= width <= 991px);
   @custom-media --tablet-landscape (992px <= width <= 1199px);
   @custom-media --desktop          (width >= 1200px);
+
+
+  .main-layout {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
 }

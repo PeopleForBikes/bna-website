@@ -1,13 +1,45 @@
 .layout {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+
   padding: 70px 20px;
 }
 
 .title {
-  font-size: var(--34px);
-  line-height: var(--lineheight-06);
-  letter-spacing: var(--letter-spacing-0_7px);
+  align-self: center;
+
+  line-height: var(--lh-06);
+  letter-spacing: var(--ls-0_7px);
   color: var(--deep-navy);
   text-transform: uppercase;
 
   text-align: center;
+}
+
+.btn-link {
+  align-self: center;
+  width: 158px;
+  padding: 13px 20px;
+}
+.btn-link:hover {
+  padding-right: 15px;
+
+  & > .icon-arrow-right {
+    margin-left: 10px;
+  }
+}
+
+.icon-arrow-right {
+  width: 14px;
+  height: 10px;
+  margin-left: 5px;
+}
+
+
+@media (810px <= width) {
+  .layout {
+    padding: 50px 80px;
+  }
 }

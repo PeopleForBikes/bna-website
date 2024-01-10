@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import React from 'react';
 
+import Icon from '@Icons';
 import styles from './styles.module.css';
 
 
@@ -13,9 +13,10 @@ function TopPlaces() {
         <li className={styles['']}></li>
       </ul>
 
-      <Link href="/location">
+      <Link className={`btn-secondary ${styles['btn-link']}`} href="/location">
         More places
-        <svg> <use href="#bars" /></svg>
+
+        <Icon name="arrow-right" className={styles['icon-arrow-right']} />
       </Link>
     </section>
   );

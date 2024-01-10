@@ -3,30 +3,39 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@types/node": "20.4.8",
-    "@types/react": "18.2.18",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.14",
-    "del-cli": "^5.0.0",
-    "eslint": "8.46.0",
-    "eslint-config-next": "13.4.12",
-    "next": "13.4.12",
-    "postcss": "^8.4.27",
-    "postcss-custom-media": "^10.0.0",
-    "postcss-import": "^15.1.0",
+    "@types/node": "20.10.7",
+    "@types/react": "18.2.47",
+    "@types/react-dom": "18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "autoprefixer": "10.4.16",
+    "del-cli": "^5.1.0",
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.0.4",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "next": "14.0.4",
+    "postcss": "^8.4.33",
+    "postcss-custom-media": "^10.0.2",
+    "postcss-import": "^16.0.0",
     "postcss-media-minmax": "^5.0.0",
-    "postcss-nesting": "^12.0.1",
-    "typescript": "5.1.6"
+    "postcss-nesting": "^12.0.2",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.49.2",
+    "react-spinners": "^0.13.8",
+    "zod": "^3.22.4"
   },
   "scripts": {
-    "start": "next dev",
     "build": "next build",
+    "compile": "tsc",
     "deploy": "next start",
-    "lint": "next lint",
-    "repack": "del node_modules pnpm-lock.yaml && pnpm install"
+    "lint": "npx eslint . --max-warnings 0 --report-unused-disable-directives",
+    "repack": "del node_modules pnpm-lock.yaml && pnpm install",
+    "start": "next dev"
   }
 }

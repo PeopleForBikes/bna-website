@@ -15,3 +15,17 @@
 
 ## SVGs
 1. [SVGs](https://kurtextrem.de/posts/svg-in-js#performance-vs-time-to-load-to-inline-or-not-to-inline)
+
+## Accessible CSS Tabs
+http://web-accessibility.carnegiemuseums.org/code/tabs
+
+https://medium.com/@andreasmcd/creating-an-accessible-tab-component-with-react-24ed30fde86a
+
+https://codepen.io/ItsCrisDiaz/pen/LYQjGpW
+
+# with radio tabs
+https://dev.to/joxx/building-a-tab-component-with-pure-css-using-radio-and-label-tags-200b
+
+https://www.codeinwp.com/snippets/accessible-pure-css-tabs
+
+https://medium.com/allenhwkim/how-to-build-tabs-only-with-css-844718d7de2f

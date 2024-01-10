@@ -20,11 +20,10 @@ function RootLayout({ children }: { children: ReactNode }) {
         <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="favicon/manifest.webmanifest" />
 
-        <style>@layer fonts, resets, base, layout, theme, components, utilities;</style>
+        <style>@layer fonts, resets, theme, base, layout, components, utilities;</style>
       </head>
       <body id='body'>
         {children}
-        <Footer />
       </body>
     </html>
   );

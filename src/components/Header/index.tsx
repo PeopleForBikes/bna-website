@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
-import Icons from '@Icons';
+import Icon from '@Icons';
 import PrimaryNavigation from './PrimaryNavigation';
 
 import styles from './styles.module.css';
@@ -17,18 +16,13 @@ function Header() {
     <header className={styles['header']}>
       <div className={styles['navLeft']}>
         <Link href="/">
-          <svg><use
-              href="#logo-bna-light"
-              width={178}
-              height={43}
-            />
-          </svg>
+          <Icon name='logo-bna-light' className="icon-logo-bna-light" />
         </Link>
 
         <div className={styles['toggle-menu']} onClick={() => setMenuIsOpen(!menuIsOpen)}>
           {menuIsOpen
-            ? <svg className={styles['svg-xmark']}><use href="#xmark" /></svg>
-            : <svg className={styles['svg-bars']}><use href="#bars" /></svg>
+            ? <Icon name="xmark" className={styles['icon-xmark']} />
+            : <Icon name="bars" className={styles['icon-bars']} />
           }
         </div>
       </div>

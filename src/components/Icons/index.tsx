@@ -1,98 +1,42 @@
-import ArrowRight from './ArrowRight';
+export { default as ArrowRight } from './ArrowRight';
 // import ArrowsMaximize from './ArrowsMaximize';
 // import ArrowsMinimize from './ArrowsMinimize';
-import Bars from './Bars';
-import BNALogo from './BNALogo';
+export { default as Bars } from './Bars';
+export { default as BNALogo } from './BNALogo';
 // import CircleInfo from './CircleInfo';
-// import CirclePhone from './CirclePhone';
-// import CommunityCare from './CommunityCare';
-// import Envelope from './Envelope';
-// import Facebook from './Facebook';
-// import Instagram from './Instagram';
+export { default as CirclePhone } from './CirclePhone';
+export { default as CommunityCare } from './CommunityCare';
+export { default as Envelope } from './Envelope';
+export { default as Facebook } from './Facebook';
+export { default as Instagram } from './Instagram';
 // import LayerDouble from './LayerDouble';
-// import LinkedIn from './LinkedIn';
+export { default as LinkedIn } from './LinkedIn';
 // import List from './List';
-// import LocationDot from './LocationDot';
-import LogoBNALight from './LogoBNALight';
+export { default as LocationDot } from './LocationDot';
+export { default as LogoBNALight } from './LogoBNALight';
 // import LocationPerson from './LocationPerson';
 // import Map from './Map';
-// import ObjectsColumn from './ObjectsColumn';
+export { default as ObjectsColumn } from './ObjectsColumn';
 // import Print from './Print';
-// import School from './School';
+export {default as  School } from './School';
 // import Search from './Search';
 // import Spinner from './Spinner';
-// import TrainSubway from './TrainSubway';
-// import Tree from './Tree';
-// import Twitter from './Twitter';
-import Xmark from './Xmark';
-// import Youtube from './Youtube';
+export{ default as Store } from './Store';
+export { default as TrainSubway } from './TrainSubway';
+export { default as Tree } from './Tree';
+export { default as XTwitter } from './XTwitter';
+export { default as  Xmark } from './Xmark';
+export { default as Youtube } from './Youtube';
 
 
-type Props = {
-  className?: string;
-  name: string;
-};
-
-function Icons({ name, ...props }: Props): JSX.Element {
-  const icons: Record<Props['name'], any> = {
-    'arrow-right':          <ArrowRight {...props} />,
-    // 'arrow-maximize':       <ArrowsMaximize {...props} />,
-    // 'arrow-minimize':       <ArrowsMinimize {...props} />,
-    'bars':                 <Bars {...props} />,
-    'bna-logo':             <BNALogo {...props} />,
-    // 'circle-info':          <CircleInfo {...props} />,
-    // 'circle-phone':         <CirclePhone {...props} />,
-    // 'community-care':       <CommunityCare {...props} />,
-    // 'envelope':             <Envelope {...props} />,
-    // 'facebook':             <Facebook {...props} />,
-    // 'instagram':            <Instagram {...props} />,
-    // 'layer-double':         <LayerDouble {...props} />,
-    // 'linkedIn':             <LinkedIn {...props} />,
-    // 'list':                 <List {...props} />,
-    // 'location-dot':         <LocationDot {...props} />,
-    // 'location-person':      <LocationPerson {...props} />,
-    'logo-bna-light':      <LogoBNALight {...props} />,
-    // 'map':                  <Map {...props} />,
-    // 'objects-column':       <ObjectsColumn {...props} />,
-    // 'print':                <Print {...props} />,
-    // 'school':               <School {...props} />,
-    // 'search':               <Search {...props} />
-    // 'spinner':              <Spinner {...props} />
-    // 'train-subway':         <TrainSubway {...props} />
-    // 'tree':                 <Tree {...props} />
-    // 'twitter':              <Twitter {...props} />
-    'xmark':                <Xmark {...props} />
-    // 'youtube':              <Youtube {...props} />
-  };
-
-  return icons[name];
-}
-
-function LandingPageIcons() {
-  // #SVGs.1
+function Icons({ name, ...props }) {
   return (
-    <svg>
-      <defs>
-        <symbol id="arrow-right">
-          <ArrowRight />
-        </symbol>
-
-        <symbol id="bars">
-          <Bars color='var(--white)' />
-        </symbol>
-
-        <symbol id="logo-bna-light">
-          <LogoBNALight />
-        </symbol>
-
-        <symbol id="xmark">
-          <Xmark />
-        </symbol>
-      </defs>
+    <svg {...props}>
+      <use href={`#${name}`} />
     </svg>
-  );
+  )
 }
 
 
-export { Icons };
-export default LandingPageIcons;
+export default Icons;
+// investigate if Next.js reloads the SVGs per page or are they cached?

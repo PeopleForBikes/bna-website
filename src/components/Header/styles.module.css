@@ -40,18 +40,19 @@
   cursor: pointer;
 }
 
-.svg-xmark {
+.icon-xmark {
   height: 14px;
   width: 14px;
 }
-.svg-bars {
+.icon-bars {
   height: 12px;
   width: 18px;
 }
 
 
-@media (--tablet-portrait) {
+@media (810px <= width) {
   .header .navLeft .menu-toggle {
-    display: none;
+    background-color: red;
+    /* display: none; */
   }
 }

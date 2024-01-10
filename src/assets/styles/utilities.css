@@ -1,4 +1,14 @@
 @layer utilities {
+  /* Spacing */
+  .w-25 {
+    width: 25px;
+  }
+  .h-24 {
+    height: 24px;
+  }
+
+
+  /* Text */
   .text-12 {
     font-size: var(--12px);
   }
