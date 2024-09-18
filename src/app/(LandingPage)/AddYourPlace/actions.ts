@@ -1,78 +1,70 @@
 'use server';
 
-import Ajv from 'ajv';
-import ajvFormats from 'ajv-formats';
-import ajvErrors from 'ajv-errors';
 
-import normaliseAjvErrors, { NormalizedAjvErrors } from '@Utils/normalizeAjvErrors';
-import formSchema from './schema';
-
-
-const ajv = new Ajv({ allErrors: true });
-ajvErrors(ajv, {
-  singleError: true,
-  keepErrors: false,
-});
-ajvFormats(ajv, ['email']);
-
+import sql from '@Utils/postgres';
+import addYourPlaceSchema from './schema';
 
 
 type Result = {
   success: boolean,
-  errors: NormalizedAjvErrors
+  errors?: null | Record<string, { message: string }>;
+  data?: unknown;
 };
+interface AddYourPlaceFormData {
+  firstName: string;
+  lastName: string;
+  occupation: string | null;
+  organization: string | null;
+  email: string;
+  country: string;
+  city: string;
+  region: string | null;
+  fipsCode: string;
+  consent: boolean;
+}
 
-const validate = ajv.compile(formSchema);
-async function addPlaceAction(prevState: Result, formData: FormData): Promise<Result> {
-  const isValid = validate({
-    title: formData.get('title'),
-    first_name: formData.get('first_name'),
-    last_name: formData.get('last_name'),
-    organization: formData.get('organization'),
-    email: formData.get('email'),
-    city: formData.get('city'),
-    region: formData.get('region'),
-    country: formData.get('country'),
-    fips_code: formData.get('fips_code'),
-    consent: Boolean(formData.get('consent'))
-  });
-
-  if(!isValid) {
-    return {
-      success: false,
-      errors: normaliseAjvErrors(validate.errors)
-    };
-  }
-
+const requestToAddYourPlace = async (formData: AddYourPlaceFormData): Promise<Row | any> => {
   try {
-    const resp = await fetch('https://api.peopleforbikes.xyz/cities/submission', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: formData
-    });
-
-    if (!resp.ok) {
-      const msg = await resp.text();
-      console.error('not ok:', msg);
-      return { success: false, errors: [] };
-    }
-
-    const sucessMessage = await resp.json();
-    console.log({ sucessMessage });
-
-    return { success: true, errors: [] };
+    await sql`
+      INSERT INTO "public"."submission"
+        (first_name, last_name, occupation, organization, email, country, city, region, fips_code, consent, status)
+      VALUES
+        (${formData.firstName}, ${formData.lastName}, ${formData.occupation}, ${formData.organization}, ${formData.email}, ${formData.country}, ${formData.city}, ${formData.region}, ${formData.fipsCode}, ${formData.consent}, 'Pending');
+    `;
   } catch (error) {
-    console.log(error);
-    return {
-      success: false,
-      errors: {
-        email: "Email taken"
-      }
-    };
+    console.error('ServerAction:SQLerror\n', error);
+    return { errors: true };
   }
 }
 
 
-export default addPlaceAction;
+async function addYourPlaceAction(prevState: Result, formData: AddYourPlaceFormData): Promise<Result> {
+  console.group('ServerAction -- addYourPlace');
+  console.info({ formData });
+
+  const validationErrors: Record<string, { message: string }> = {};
+  const validation = addYourPlaceSchema.safeParse(formData);
+  console.log({ validation });
+
+  if(!validation.success) {
+    for (const issue of validation.error.issues) {
+      const { path, message } = issue;
+      if (path && path[0]) {
+        validationErrors[path[0]] = { message };
+      }
+    }
+
+    console.warn({ validationErrors });
+    return {
+      success: false,
+      errors: validationErrors
+    };
+  }
+
+  await requestToAddYourPlace(validation.data as AddYourPlaceFormData);
+
+  return { success: true, data: {} };
+}
+
+
+export default addYourPlaceAction;
