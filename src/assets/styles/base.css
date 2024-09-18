@@ -22,6 +22,7 @@
     color: var(--deep-navy);
 
     background-color: var(--white);
+    overflow-x: hidden;
   }
 
   a, a:visited, a:hover, a:active {
