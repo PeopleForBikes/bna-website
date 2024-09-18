@@ -45,3 +45,6 @@ z*.*
 
 # Containerfile
 Containerfile
+
+# database
+pgDump

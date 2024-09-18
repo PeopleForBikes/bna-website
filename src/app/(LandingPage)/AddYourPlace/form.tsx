@@ -1,18 +1,19 @@
 'use client';
 
-import { ErrorBoundary } from 'react-error-boundary';
+import { useEffect, useState } from 'react';
 
 import TextInput from '@Components/TextInput';
 import SubmitButton from '@Components/SubmitButton';
 import useForm from '@Hooks/useForm'
 
 import addYourPlaceSchema from './schema';
-import addYourPlaceAction from './actions';
+import addYourPlaceAction, { getCountries } from './actions';
 import ThankYou from './Thankyou';
 import styles from './styles.module.css';
 
 
 function Form() {
+  const [countries, setCountries] = useState<string[]>([]);
   const {
     handleAction, handleSubmit,
     actionState, isPending,
@@ -22,6 +23,15 @@ function Form() {
     action: addYourPlaceAction,
     initialActionState: { success: false, errors: null, data: null }
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getCountries();
+      setCountries(data);
+    };
+
+    fetchData()
+  }, []);
 
   return (
     <>
@@ -37,93 +47,88 @@ function Form() {
         >
           <div>
             <TextInput
-              value="Jane"
               id="firstName"
               name="firstName"
-              label="First name"
-              placeholder="First name"
+              label="First name *"
               className={styles['text-input']}
               errorMessage={validationErrors.firstName?.message}
             />
 
             <TextInput
-              value="Doe"
               id="lastName"
               name="lastName"
-              label="Last name"
-              placeholder="Last name"
+              label="Last name *"
               className={styles['text-input']}
               errorMessage={validationErrors.lastName?.message}
             />
 
             <TextInput
-              value="Software Engineer"
               id="occupation"
               name="occupation"
               label="Occupation"
-              placeholder="Occupation"
               className={styles['text-input']}
               errorMessage={validationErrors.occupation?.message}
             />
 
             <TextInput
-              value="PeopleForBikes"
               id="organization"
               name="organization"
               label="Organization name"
-              placeholder="Organization name"
               className={styles['text-input']}
               errorMessage={validationErrors.organization?.message}
             />
 
             <TextInput
-              value="jane.doe@example.com"
               id="email"
               name="email"
-              label="Email"
-              placeholder="Email"
+              label="Email *"
               className={styles['text-input']}
               errorMessage={validationErrors.email?.message}
             />
 
-            <TextInput
-              value="United States"
-              id="country"
-              name="country"
-              label="Country"
-              placeholder="Country"
-              className={styles['text-input']}
-              errorMessage={validationErrors.country?.message}
-            />
+            <div className={styles['dropdown-selection']}>
+              <header className={styles['header']}>
+                <label htmlFor="country">Select Country: *</label>
+                <p className={styles['error-message']}>
+                  {validationErrors.country?.message}
+                </p>
+              </header>
+              <select
+                id="country"
+                name="country"
+                className={validationErrors.country ? styles['dropdown-error'] : ''}
+              >
+                <option value="">Choose a country</option>
+                {countries.map((country) => (
+                  <option key={country} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+            </div>
 
             <TextInput
-              value="San Francisco"
               id="city"
               name="city"
-              label="City"
-              placeholder="City"
+              label="City *"
               className={styles['text-input']}
               errorMessage={validationErrors.city?.message}
             />
 
             <TextInput
-              value="California"
               id="region"
               name="region"
               label="State/Region"
-              placeholder="State/Region"
               className={styles['text-input']}
               errorMessage={validationErrors.region?.message}
             />
 
             <TextInput
-              value="3570670"
               id="fipsCode"
               name="fipsCode"
-              label="FIPS Code"
-              placeholder="FIPS Code"
+              label="FIPS Code *"
               className={styles['text-input']}
-              errorMessage={validationErrors.fips_code?.message}
+              errorMessage={validationErrors.fipsCode?.message}
             />
           </div>
 
