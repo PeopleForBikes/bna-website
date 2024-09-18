@@ -348,3 +348,7 @@
     display: none;
   }
 }
+
+:target {
+  scroll-margin-block: 5ex;
+}

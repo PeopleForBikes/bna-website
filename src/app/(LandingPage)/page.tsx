@@ -1,15 +1,36 @@
-import Image from 'next/image';
-import logo from '@Images/logo-bna-full-1015×596.png';
+import React from 'react';
+
+import Hero from './Hero';
+import TopPlaces from './TopPlaces';
+import AddYourPlace from './AddYourPlace';
+import CalculateScore from './CalculateScore';
+import Explore from './Explore';
+import { Footer } from '@Components';
+
+import LandingPageIcons from '@Components/Sprites';
+import Header from '@Components/Header';
 
 
-export default function Home() {
+function LandingPage() {
   return (
-    <main className="flex flex-col items-center">
-      <h2>People For Bikes</h2>
-      <Image
-        src={logo}
-        alt='BNA Logo'
-      />
-    </main>
+    <>
+      <div style={{ display: "none" }}>
+        <LandingPageIcons />
+      </div>
+
+      <main className="main-layout page-layout">
+        <Header />
+
+        <Hero />
+        <TopPlaces />
+        <AddYourPlace />
+        <CalculateScore />
+        <Explore />
+        <Footer />
+      </main>
+    </>
   );
 }
+
+
+export default LandingPage;

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2021",
     "lib": [
       "dom",
       "dom.iterable",
@@ -11,6 +11,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "noEmitOnError": false,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -33,7 +34,11 @@
       "@Images/*": ["./src/assets/images/*"],
       "@Images": ["./src/assets/images"],
       "@Styles/*": ["./src/assets/styles/*"],
-      "@Styles": ["./src/assets/styles"]
+      "@Styles": ["./src/assets/styles"],
+      "@SVGs/*": ["./src/assets/svgs/*"],
+      "@SVGs": ["./src/assets/svgs"],
+      "@Utils/*": ["./src/utils/*"],
+      "@Utils": ["./src/utils"]
     }
   },
   "include": [

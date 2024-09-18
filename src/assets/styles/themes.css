@@ -1,42 +1,55 @@
-:root {
-  --primary-color: #00263E;
-  --primary-link-color: #009EDB;
-  --primary-text-color: #8B8A8D;
-  --secondary-text-color: #4D4D4F;
-  --toc-highlight-text-color: #D71920;
+@layer themes {
+  :root {
+    /* COLORS */
 
+    /* primary */
+    --deep-navy:  #00263eff;
+    --cyan:       #009edbff;
+    --red:        #d71920ff;
 
-  --secondary-color: #fcfaf6;
-  --bg-color: #F5FBFF;
-  --text-secondary: ;
-  --text-success: ;
-  --text-danger: #E76E6E;
-  --text-warning: #E76E6E;
-  --text-info: ;
-  --text-light: #B5B7B9;
-  --text-dark: ;
-  --text-muted: ;
-  --text-white: #FFFFFF;
+    /* secondary */
+    --coal:       #4d4d4fff;
+    --gray:       #8b8a8dff;
+    --white:      #ffffffff;
 
-  --header-bg-linear-gradient: linear-gradient(0deg, rgba(245,251,255,0.1) 0%, rgb(255, 255, 255) 100%);
-  /* --header-bg-image: url(~@Images/header-net-light.png); */
-}
+    /* tertiary */
+    --golden-yellow:     #fadb4aff;
 
-[data-theme="dark"] {
-  --primary-color: #2658cb;
-  --secondary-color: #2A363F;
-  --bg-color: #0f0f0f;
-  --text-primary: #ffffff;
-  --text-secondary: #acddff;
-  --text-success: ;
-  --text-danger: #E76E6E;
-  --text-warning: #E76E6E;
-  --text-info: ;
-  --text-light: #B5B7B9;
-  --text-dark: ;
-  --text-muted: ;
-  --text-white: #FFFFFF;
+    /* other */
+    --blue-gray: #273B55;
+    --border-gray: #e0e0e0;
 
-  --header-bg-linear-gradient: linear-gradient(0deg, rgba(15, 15, 15, 0.1) 0%, rgb(0, 0, 0) 100%);
-  /* --header-bg-image: url(~@Images/header-net-dark.png); */
+    /* HOVER */
+    --hover-cyan: #2f88c2;
+    --hover-golden-eyllow: #f0d140;
+
+    /* BUTTON SHADOW */
+    --btn-shadow: 0px 4px 20px -1px rgba(0, 53, 83, 0.13);
+  }
+
+    /* BUTTONS */
+
+    /* secondary */
+    .btn-secondary {
+      border: 1px solid var(--bna-deep-navy, #00263E);
+      background-color: var(--white);
+    }
+
+    /* donate */
+    .btn-donate {
+      font-family: Montserrat;
+      font-weight: var(--bold);
+      font-size: var(--12px);
+      line-height: var(--lh-14px);
+
+      color: var(--deep-navy);
+      background-color: var(--golden-yellow);
+      text-transform: uppercase;
+    }
+
+  /* LOGO */
+  .svg-logo-bna-light {
+    width: 178px;
+    height: 43px;
+  }
 }

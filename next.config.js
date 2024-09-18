@@ -1,6 +1,9 @@
+const path = require('path');
+
+
 const nextConfig = {
   experimental: {
-    appDir: true
+    optimizePackageImports: []
   },
 
   reactStrictMode: true

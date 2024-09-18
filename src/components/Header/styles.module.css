@@ -1,5 +1,44 @@
 .header {
-  height: 60px;
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+
+  height: 83px;
+  width: 100%;
+}
+
+.navLeft {
+  height: 100%;
+  width: 100%;
+  padding: 21px 17px 19px 20px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  & a {
+    height: 100%;
+    display: inline-block;
+  }
+}
+
+.toggle-menu {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+
+@media (810px <= width) {
+  .header .navLeft .menu-toggle {
+    background-color: red;
+    /* display: none; */
+  }
 }

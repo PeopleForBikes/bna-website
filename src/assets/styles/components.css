@@ -1,0 +1,13 @@
+@layer components {
+  .btn {
+    width: 100%;
+    padding: 20px 30px;
+
+    font-family: Montserrat;
+    font-weight: var(--bold);
+    line-height: var(--lh-03);
+    text-transform: uppercase;
+
+    cursor: pointer;
+  }
+}

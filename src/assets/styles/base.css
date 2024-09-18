@@ -1,27 +1,81 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  *,
+  *::after,
+  *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
   }
-}
 
-body {
-  font-family: var(--fonts-body) ;
-}
+  body {
+    box-sizing: border-box;
 
-h2 {
-  font-family: var(--fonts-header-bold);
-  @apply text-5xl;
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    font-family: 'Montserrat';
+    font-weight: var(--regular);
+    font-size: var(--16px);
+    line-height: normal;
+    color: var(--deep-navy);
+
+    background-color: var(--white);
+  }
+
+  a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  fieldset {
+    padding: 0;
+    border: none;
+    border-width: 0;
+  }
+
+  ul, ol, dd {
+    list-style: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dharma Gothic E';
+    font-weight: var(--bold);
+    line-height: normal;
+    color: var(--deep-navy);
+  }
+
+  h1 {
+    font-size: var(--40px);
+    letter-spacing: var(--ls-1px);
+  }
+  h2 {
+    font-size: var(--34px);
+    letter-spacing: var(--ls-0_7px);
+  }
+  h3 {
+    font-size: var(--28px);
+    letter-spacing: var(--ls-0_7px);
+  }
+
+  button {
+    border-style: none;
+    background-color: transparent;
+  }
+
+  @media (810px <= width) {
+    h1 {
+      font-size: var(--60px);
+      letter-spacing: var(--ls-1_5px);
+    }
+    h2 {
+      font-size: var(--50px);
+      letter-spacing: var(--ls-1_25px);
+    }
+    h3 {
+      font-size: var(--34px);
+      letter-spacing: var(--ls-0_85px);
+    }
+  }
 }

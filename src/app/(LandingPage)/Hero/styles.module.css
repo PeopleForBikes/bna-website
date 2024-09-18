@@ -1,0 +1,67 @@
+.hero {
+  width: 100vw;
+  height: 710px;
+
+  position: relative;
+
+  background-image: url('~@Images/hero_w_710.png');
+  background-repeat: no-repeat;
+  background-position: -715px 0px;
+}
+
+.gradient {
+  height: inherit;
+  position: relative;
+  background: linear-gradient(254deg, rgba(0, 0, 0, 0.43) 4.33%, rgba(0, 0, 0, 0.00) 88.1%);
+}
+
+.search {
+  position: absolute;
+  top: 172px;
+  left: 0;
+
+  padding: 0 16px;
+}
+
+.container {
+  width: 90%;
+  padding: 90px 20px;
+
+  position: absolute;
+  bottom: 98px;
+  right: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.60);
+  border-right: 0;
+
+  background: rgba(0, 0, 0, 0.60);
+  box-shadow: var(--card-shadow);
+}
+
+.title {
+  margin-bottom: 30px;
+
+  line-height: normal;
+  letter-spacing: var(--ls-0_85px);
+  text-transform: capitalize;
+  color: var(--white);
+}
+
+@media (810px <= width) {
+  .hero {
+    background-position: right;
+    background-size: unset;
+  }
+
+  .container {
+    max-width: 940px;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@media (1080px <= width) {
+  .container {
+    padding-right: 140px;
+  }
+}

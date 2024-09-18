@@ -1,0 +1,32 @@
+.nav {
+  width: 100%;
+  padding: 60px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 60px;
+
+  background-color: var(--white);
+  box-shadow: var(--menu-shadow);
+
+  transition: transform .6s ease-out;
+}
+
+.nav-item {
+  margin-bottom: 30px;
+  text-align: right;
+
+  & a {
+    font-family: Dharma Gothic E;
+    font-size: var(--22px);
+    font-weight: var(--bold);
+    line-height: var(--lineheight-03);
+    letter-spacing: var(--letter-spacing-0_55px);
+
+    color: var(--deep-navy);
+  }
+}
+.nav-item:last-child {
+  margin-bottom: 0;
+}
