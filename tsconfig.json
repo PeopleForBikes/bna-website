@@ -36,7 +36,9 @@
       "@Styles/*": ["./src/assets/styles/*"],
       "@Styles": ["./src/assets/styles"],
       "@SVGs/*": ["./src/assets/svgs/*"],
-      "@SVGs": ["./src/assets/svgs"]
+      "@SVGs": ["./src/assets/svgs"],
+      "@Utils/*": ["./src/utils/*"],
+      "@Utils": ["./src/utils"]
     }
   },
   "include": [

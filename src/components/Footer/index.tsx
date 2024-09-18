@@ -10,7 +10,7 @@ function Footer() {
 
       <header>
         <Link href="https://www.peopleforbikes.org" >
-          <Icon name='logo-bna-light' className={styles['icon-logo-bna-light']} />
+          <Icon name='logo-bna-light' />
         </Link>
 
         <nav className={styles['nav']} aria-labelledby="footer-nav-list">
@@ -54,13 +54,13 @@ function Footer() {
             <ul className={styles['col-1']}>
               <li>
                 <Link href="https://www.facebook.com/PeopleForBikes" target="_blank" rel="noreferrer">
-                  <Icon name="facebook" className="w-25 h-24" />
+                  <Icon name="facebook" />
                   <span>Facebook</span>
                 </Link>
               </li>
               <li>
                 <Link href="https://www.youtube.com/user/peopleforbikes/videos" target="_blank" rel="noreferrer">
-                  <Icon name="youtube" style={{width: '25px', height: '17px'}} />
+                  <Icon name="youtube" />
                   <span>Youtube</span>
                 </Link>
               </li>
@@ -68,19 +68,19 @@ function Footer() {
             <ul className={styles['col-2']}>
               <li>
                 <Link href="https://www.youtube.com/user/peopleforbikes/videos" target="_blank" rel="noreferrer">
-                  <Icon name="linkedin" style={{width: '25px', height: '24px'}} />
+                  <Icon name="linkedin" />
                   <span>LinkedIn</span>
                 </Link>
               </li>
               <li>
                 <Link href="https://twitter.com/peopleforbikes" target="_blank" rel="noreferrer">
-                  <Icon name="x-twitter" style={{width: '25px', height: '24px'}} />
+                  <Icon name="x-twitter" />
                   <span>Twitter</span>
                 </Link>
               </li>
               <li>
                 <Link href="https://www.instagram.com/peopleforbikes" target="_blank" rel="noreferrer">
-                  <Icon name="instagram" style={{width: '25px', height: '24px'}} />
+                  <Icon name="instagram" />
                   <span>Instagram</span>
                 </Link>
               </li>

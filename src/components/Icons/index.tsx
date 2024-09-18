@@ -1,3 +1,16 @@
+import type { SVGProps } from 'react';
+import styles from './styles.module.css';
+
+
+function Icons({ name, ...props }: SVGProps<SVGSVGElement> & { name: string }) {
+  return (
+    <svg className={styles[`icon-${name}`]} {...props}>
+      <use href={`#${name}`} />
+    </svg>
+  );
+}
+
+
 export { default as ArrowRight } from './ArrowRight';
 // import ArrowsMaximize from './ArrowsMaximize';
 // import ArrowsMinimize from './ArrowsMinimize';
@@ -27,16 +40,4 @@ export { default as Tree } from './Tree';
 export { default as XTwitter } from './XTwitter';
 export { default as  Xmark } from './Xmark';
 export { default as Youtube } from './Youtube';
-
-
-function Icons({ name, ...props }) {
-  return (
-    <svg {...props}>
-      <use href={`#${name}`} />
-    </svg>
-  )
-}
-
-
 export default Icons;
-// investigate if Next.js reloads the SVGs per page or are they cached?

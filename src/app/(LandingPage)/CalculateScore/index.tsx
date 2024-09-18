@@ -60,7 +60,7 @@ function CalculateScore() {
           <div className={styles['tabpanel-content']}>
             <div className={styles['tabpanel-meta']}>
               <span className={styles['tabpanel-title']}>
-                <Icon name="community-care" className={styles['icon']} />
+                <Icon name="community-care" />
                 People
               </span>
 
@@ -79,7 +79,7 @@ function CalculateScore() {
           <div className={styles['tabpanel-content']}>
             <div className={styles['tabpanel-meta']}>
               <span className={styles['tabpanel-title']}>
-                <Icon name="objects-column" className={styles['icon']} />
+                <Icon name="objects-column" />
                 Core service
               </span>
 
@@ -97,7 +97,7 @@ function CalculateScore() {
           <div className={styles['tabpanel-content']}>
             <div className={styles['tabpanel-meta']}>
               <span className={styles['tabpanel-title']}>
-                <Icon name="tree" className={styles['icon']} />
+                <Icon name="tree" />
                 Recreation
               </span>
 
@@ -115,7 +115,7 @@ function CalculateScore() {
           <div className={styles['tabpanel-content']}>
             <div className={styles['tabpanel-meta']}>
               <span className={styles['tabpanel-title']}>
-                <Icon name="school" className={styles['icon']} />
+                <Icon name="school" />
                 Opportunity
               </span>
 
@@ -133,7 +133,7 @@ function CalculateScore() {
           <div className={styles['tabpanel-content']}>
             <div className={styles['tabpanel-meta']}>
               <span className={styles['tabpanel-title']}>
-                <Icon name="store" className={styles['icon']} />
+                <Icon name="store" />
                 Shopping
               </span>
 
@@ -151,7 +151,7 @@ function CalculateScore() {
           <div className={styles['tabpanel-content']}>
             <div className={styles['tabpanel-meta']}>
               <span className={styles['tabpanel-title']}>
-                <Icon name="train-subway" className={styles['icon']} />
+                <Icon name="arrow-right" />
                 Transit
               </span>
 

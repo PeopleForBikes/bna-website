@@ -21,11 +21,6 @@
   & a {
     height: 100%;
     display: inline-block;
-
-    & > svg:first-child {
-      width: 178px;
-      height: 43px;
-    }
   }
 }
 
@@ -38,15 +33,6 @@
   align-items: center;
 
   cursor: pointer;
-}
-
-.icon-xmark {
-  height: 14px;
-  width: 14px;
-}
-.icon-bars {
-  height: 12px;
-  width: 18px;
 }
 
 

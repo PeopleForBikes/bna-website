@@ -16,13 +16,13 @@ function Header() {
     <header className={styles['header']}>
       <div className={styles['navLeft']}>
         <Link href="/">
-          <Icon name='logo-bna-light' className="icon-logo-bna-light" />
+          <Icon name='logo-bna-light' />
         </Link>
 
         <div className={styles['toggle-menu']} onClick={() => setMenuIsOpen(!menuIsOpen)}>
           {menuIsOpen
-            ? <Icon name="xmark" className={styles['icon-xmark']} />
-            : <Icon name="bars" className={styles['icon-bars']} />
+            ? <Icon name="xmark" />
+            : <Icon name="bars" />
           }
         </div>
       </div>

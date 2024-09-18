@@ -1,20 +1,30 @@
 'use server';
 
-import type { ZodIssue } from 'zod';
-import formSchema, { FormSchema } from './schema';
+import Ajv from 'ajv';
+import ajvFormats from 'ajv-formats';
+import ajvErrors from 'ajv-errors';
+
+import normaliseAjvErrors, { NormalizedAjvErrors } from '@Utils/normalizeAjvErrors';
+import formSchema from './schema';
 
 
-type Errors = {
-  [key: string]: unknown
-}
+const ajv = new Ajv({ allErrors: true });
+ajvErrors(ajv, {
+  singleError: true,
+  keepErrors: false,
+});
+ajvFormats(ajv, ['email']);
+
+
+
 type Result = {
   success: boolean,
-  errors: Errors
+  errors: NormalizedAjvErrors
 };
 
-async function addPlaceAction(prevState: FormSchema, formData: FormData): Promise<Result> {
-  const errors: Errors = {};
-  const isValid = formSchema.safeParse({
+const validate = ajv.compile(formSchema);
+async function addPlaceAction(prevState: Result, formData: FormData): Promise<Result> {
+  const isValid = validate({
     title: formData.get('title'),
     first_name: formData.get('first_name'),
     last_name: formData.get('last_name'),
@@ -24,47 +34,44 @@ async function addPlaceAction(prevState: FormSchema, formData: FormData): Promis
     region: formData.get('region'),
     country: formData.get('country'),
     fips_code: formData.get('fips_code'),
-    consent: formData.get('consent')
+    consent: Boolean(formData.get('consent'))
   });
-  console.log('isValid', isValid)
 
-  if (!isValid.success) {
+  if(!isValid) {
     return {
       success: false,
-      errors: isValid.error.flatten((issue: ZodIssue) => ({
-        message: issue.message
-      })).fieldErrors
+      errors: normaliseAjvErrors(validate.errors)
     };
   }
 
   try {
-    const response = await fetch('https://api.peopleforbikes.xyz/cities/submissions', {
+    const resp = await fetch('https://api.peopleforbikes.xyz/cities/submission', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify(isValid.data)
+      body: formData
     });
 
-    console.log(response.headers)
-    console.log(response)
-    // console.log('one', await response);
-    // console.log('two', await response.text());
-    const result = await response.json();
-    console.log("Success:", result);
+    if (!resp.ok) {
+      const msg = await resp.text();
+      console.error('not ok:', msg);
+      return { success: false, errors: [] };
+    }
 
-    return { success: true, errors: {} };
-  } catch (error ) {
-    console.log('server error', error);
+    const sucessMessage = await resp.json();
+    console.log({ sucessMessage });
+
+    return { success: true, errors: [] };
+  } catch (error) {
+    console.log(error);
     return {
       success: false,
-      errors: { fetch: error }
+      errors: {
+        email: "Email taken"
+      }
     };
   }
-
-//   revalidatePath('/');
-//   revalidatePath('/dashboard/invoices');
-//   redirect('/dashboard/invoices');
 }
 
 

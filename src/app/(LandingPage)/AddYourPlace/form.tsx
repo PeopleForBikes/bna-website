@@ -1,9 +1,12 @@
 'use client';
 
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 import { useFormState } from 'react-dom';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { ajvResolver } from '@hookform/resolvers/ajv';
+
+import { fullFormats } from "ajv-formats/dist/formats";
 
 import addPlaceAction from './actions';
 import formSchema, { FormSchema } from './schema';
@@ -14,65 +17,52 @@ import styles from './styles.module.css';
 
 
 function Form() {
-  const { formState: { errors }, register, reset, setError } = useForm<FormSchema>({
-    resetOptions: {
-      keepDirtyValues: true, // user-interacted input will be retained
-      keepErrors: false, // input errors will be retained with value update
+  const {
+    formState: { errors },
+    register, clearErrors, setError, trigger
+  } = useForm<FormSchema>({
+    mode: 'onSubmit',
+    defaultValues: {
+      title: '',
+      first_name: '',
+      last_name: '',
+      organization: '',
+      city: '',
+      region: '',
+      country: '',
+      fips_code: '',
+      consent: true
     },
-    resolver: zodResolver(formSchema)
+    resetOptions: {
+      keepDirtyValues: true,  // user-interacted input will be retained
+      keepErrors: false,      // input errors will be retained with value update
+    }
   });
 
-  const initialState = { success: false, errors: {} };
-  const [serverReply, formAction] = useFormState<State, FormData>(addPlaceAction, initialState);
+  const initialState = { success: false, errors: [] };
+  const [serverReply, formAction] = useFormState(addPlaceAction, initialState);
 
   async function clientAction(formData: FormData) {
-    const isValid = formSchema.safeParse({
-      title: formData.get('title'),
-      first_name: formData.get('first_name'),
-      last_name: formData.get('last_name'),
-      organization: formData.get('organization'),
-      email: formData.get('email'),
-      city: formData.get('city'),
-      region: formData.get('region'),
-      country: formData.get('country'),
-      fips_code: formData.get('fips_code'),
-      consent: formData.get('consent')
-    });
 
-    console.log(isValid);
-    if (!isValid.success) {
-      reset();
-
-      isValid.error.issues.forEach(issue => {
-        console.log('issue', issue)
-        console.log(issue.path[0]);
-        setError(issue.path[0], {
-          message: issue.message,
-        });
-      });
-
-      return;
-    }
-
-    return formAction(formData);
+      return formAction();
   };
 
   useEffect(() => {
     console.log('serverReply', serverReply.errors)
-    if (Object.keys(serverReply.errors).length > 0) {
-      reset();
+    if (serverReply.errors.length > 0) {
+      clearErrors();
 
-      Object.keys(serverReply.errors).forEach(key => {
-        console.log('key', key)
-        setError(key, {
-          message: serverReply.errors[key].pop().message,
-        });
-      });
+      for (const error of serverReply.errors) {
+        const { name, message } = error;
+          setError(name, { message });
+      };
     }
   }, [serverReply.errors]);
 
   return (
-    <Fragment>
+    <ErrorBoundary
+      fallback={<p>There was an error while submitting the form</p>}
+    >
       {serverReply.success
         ? <ThankYou />
         :
@@ -83,7 +73,7 @@ function Form() {
               <input id="title"
                 type="text"
                 placeholder="Title"
-                {...register('title')}
+                {...register('title', { required: false })}
                 className={errors.title ? styles['input-error'] : '' }
               />
               {errors.title && (
@@ -96,7 +86,7 @@ function Form() {
               <input id="first_name"
                 type="text"
                 placeholder="First name"
-                {...register('first_name')}
+                {...register('first_name', { required: false })}
                 className={errors.first_name ? styles['input-error'] : '' }
               />
               {errors.first_name && (
@@ -135,7 +125,9 @@ function Form() {
               <input id="email"
                 type="text"
                 placeholder="Email"
-                {...register('email')}
+                {...register('email', {
+                  setValueAs: v => v+1
+                })}
                 className={errors.email ? styles['input-error'] : '' }
               />
               {errors.email && (
@@ -186,7 +178,8 @@ function Form() {
               <label htmlFor="fips_code">FIPS Code</label>
               <input id="fips_code"
                 type="text"
-                placeholder="FIPS Code" {...register('fips_code')}
+                placeholder="FIPS Code"
+                {...register('fips_code')}
                 className={`${styles['form-input-last']} ${errors.fips_code ? styles['input-error'] : ''}` }
               />
               {errors.fips_code && (
@@ -204,9 +197,9 @@ function Form() {
             </section>
 
             <SubmitButton className={styles['btn-submit']} />
-          </form>
+        </form>
       }
-    </Fragment>
+    </ErrorBoundary>
   );
 }
 

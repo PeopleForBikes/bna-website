@@ -125,13 +125,6 @@
 }
 
 
-/* Icons */
-.icon {
-  height: 26px;
-  width: 26px;
-}
-
-
 @media (810px <= width) {
   .layout {
     padding: 50px 80px;
