@@ -47,24 +47,26 @@ async function TopPlaces() {
     <section className={styles['layout']}>
       <h3 className={styles['title']}>Top 10 Places</h3>
 
-      <ul className={styles['list']}>
-        {topFivePlaces.map((place) => (
-          <li className={styles['item']} key={place.city_name}>
-            <h3>{place.city_name}</h3>
-            <span>{`${place.state_abbrev}, ${place.country}`}</span>
-            <h1>{place.score}</h1>
-          </li>
-        ))}
-      </ul>
-      <ul className={styles['list']}>
-        {bottomFivePlaces.map((place) => (
-          <li className={styles['item']} key={place.city_name}>
-            <h3>{place.city_name}</h3>
-            <span>{`${place.state_abbrev}, ${place.country}`}</span>
-            <h1>{place.score}</h1>
-          </li>
-        ))}
-      </ul>
+      <div className={styles['list-container']}>
+        <ul className={styles['list']}>
+          {topFivePlaces.map((place) => (
+            <li className={styles['item']} key={place.city_name}>
+              <h3>{place.city_name}</h3>
+              <span>{`${place.state_abbrev}, ${place.country}`}</span>
+              <h1>{place.score}</h1>
+            </li>
+          ))}
+        </ul>
+        <ul className={styles['list']}>
+          {bottomFivePlaces.map((place) => (
+            <li className={styles['item']} key={place.city_name}>
+              <h3>{place.city_name}</h3>
+              <span>{`${place.state_abbrev}, ${place.country}`}</span>
+              <h1>{place.score}</h1>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <Link className={`btn-secondary ${styles['btn-link']}`} href="https://bna.peopleforbikes.org/#/places////">
         More Places

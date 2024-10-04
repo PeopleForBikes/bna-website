@@ -1,3 +1,5 @@
+@import url('@Styles/mediaQueries.css');
+
 .layout {
   width: 100%;
   display: flex;
@@ -18,32 +20,39 @@
   text-align: center;
 }
 
-.list {
+.list-container {
   width: 100%;
+  max-width: 770px;
+  margin-block: 50px;
+  align-self: center;
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  column-gap: 100px;
 
-  .item {
-    width: 150px;
+  .list {
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: center;
+    row-gap: 40px;
 
-    h3 {
-      font-size: var(--28px);
+    .item {
+      width: 150px;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+
+      h3 {
+        font-size: var(--28px);
+      }
     }
   }
-}
-.list:first-of-type{
-  margin-block-start: 60px;
-}
-.list:last-of-type{
-  margin-block-start: 50px;
-  margin-block-end: 60px;
+
+  .list:first-of-type {
+    justify-content: flex-start;
+  }
+  .list:last-of-type {
+    justify-content: flex-end;
+  }
 }
 
 .btn-link {
@@ -65,9 +74,25 @@
   margin-left: 5px;
 }
 
+@media (812px <= width) {
+  .list-container {
+    margin-block: 60px;
+    padding-inline: 50px;
+  }
+}
 
-@media (810px <= width) {
-  .layout {
-    padding: 50px 80px;
+@media (--desktop), (--wide) {
+  .list-container {
+    max-width: 1440px;
+    flex-direction: column;
+    row-gap: 40px;
+
+    .list:first-of-type,
+    .list:last-of-type {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      column-gap: 40px;
+      flex-direction: row;
+    }
   }
 }
