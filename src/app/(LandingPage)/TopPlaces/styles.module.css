@@ -18,6 +18,34 @@
   text-align: center;
 }
 
+.list {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 100px;
+
+  .item {
+    width: 150px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+      font-size: var(--28px);
+    }
+  }
+}
+.list:first-of-type{
+  margin-block-start: 60px;
+}
+.list:last-of-type{
+  margin-block-start: 50px;
+  margin-block-end: 60px;
+}
+
 .btn-link {
   align-self: center;
   width: 158px;
