@@ -1,14 +1,34 @@
-import Link from 'next/link';
+'use client';
 
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import Icon from '@Icons';
 import styles from './styles.module.css';
 
+function MobilePrimaryNavigation({ className='', menuIsOpen, setMenuIsOpen }: { className: string, menuIsOpen: boolean, setMenuIsOpen: (menuIsOpen: boolean) => void }) {
+  const handleClick = () => {
+    setMenuIsOpen(!menuIsOpen);
+  }
 
-function PrimaryNavigation({ className='' }: { className: string }) {
   return (
     <nav
-      aria-labelledby="primary-navigation"
+      aria-labelledby="mobile-primary-navigation"
       className={`${styles['nav']} ${className}`}
+      style={{ transform: `${menuIsOpen ? 'translateY(0)' : 'translateY(-495px)'}` }}
     >
+      <div
+        className={styles['close-menu']}
+        onClick={handleClick}
+      >
+        <Image
+          src="/images/logo-bna-dark-text.png"
+          alt="BNA Logo"
+          width={178}
+          height={43} />
+        <Icon name="xmark" />
+      </div>
+
       <ul className={styles['nav-list']}>
         <li className={styles['nav-item']}>
           <Link href="/locations">Search places</Link>
@@ -36,4 +56,4 @@ function PrimaryNavigation({ className='' }: { className: string }) {
 }
 
 
-export default PrimaryNavigation;
+export default MobilePrimaryNavigation;

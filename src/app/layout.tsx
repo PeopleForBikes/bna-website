@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import '@Styles/mediaQueries.css';
 import '@Styles/fonts.css';
 import '@Styles/resets.css';
 import '@Styles/base.css';
