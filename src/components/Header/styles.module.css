@@ -1,14 +1,21 @@
+@import url('@Styles/mediaQueries.css');
+
+
 .header {
+  max-width: 1440px;
+  width: 100%;
+  height: 83px;
+
   position: absolute;
   z-index: 9999;
   top: 0;
   left: 0;
+  right: 0;
 
-  height: 83px;
-  width: 100%;
+  margin-inline: auto;
 }
 
-.navLeft {
+.wrapper {
   height: 100%;
   width: 100%;
   padding: 21px 17px 19px 20px;
@@ -35,10 +42,23 @@
   cursor: pointer;
 }
 
+.primary-nav {
+  display: none;
+}
 
-@media (810px <= width) {
-  .header .navLeft .menu-toggle {
-    background-color: red;
-    /* display: none; */
+@media (--desktop), (--wide) {
+  .wrapper {
+    padding-block: 21px 19px;
+    padding-inline: 30px;
+  }
+
+  .toggle-menu {
+    display: none;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .primary-nav {
+    display: flex;
   }
 }

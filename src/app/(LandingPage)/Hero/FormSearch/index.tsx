@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useFormState } from 'react-dom';
 import SubmitButton from '@Components/SubmitButton';
 import styles from './styles.module.css';
 
@@ -9,12 +8,10 @@ import searchAction from './actions';
 
 
 function FormSearch() {
-  const initialState = { success: false, errors: {} };
-  const [serverReply, formAction] = useFormState(searchAction, initialState);
   const [term, setTerm] = useState('');
 
   return (
-    <form className={styles['form-search']} action={formAction}>
+    <form className={styles['form-search']}>
       <input
         type="text"
         name='term'

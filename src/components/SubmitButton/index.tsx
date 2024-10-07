@@ -1,18 +1,31 @@
 'use client';
 
-import { useFormStatus } from 'react-dom';
 import ClipLoader from 'react-spinners/ClipLoader';
-
 import styles from './styles.module.css';
 
 
-function SubmitButton({ label='submit', className='' }) {
-  const { pending } = useFormStatus();
+interface Props {
+  className?: string;
+  isDisabled?: boolean;
+  isPending?: boolean;
+  formId?: string;
+  label: string;
+  style?: Record<string, string>;
+  spinnerColor?: string;
+}
 
+function SubmitButton({ className='', isDisabled=false, isPending=false, formId='', label='submit', style={}, spinnerColor='#FFFFFF' }: Props) {
   return (
-    <button type='submit' aria-disabled={pending} className={`${styles['button']} ${className}`}>
-      { pending
-        ? <ClipLoader color="#FFFFFF" />
+    <button
+      style={style}
+      form={formId}
+      type='submit'
+      disabled={isDisabled}
+      aria-disabled={isDisabled}
+      className={`${styles['button']} ${className}`}
+    >
+      {isPending
+        ? <ClipLoader color={spinnerColor} loading={true} size={30} />
         : label
       }
     </button>
