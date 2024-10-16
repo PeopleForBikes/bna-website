@@ -106,22 +106,22 @@
   width: 375px;
 }
 .image-1 {
-  background-image: url('~@Images/mobile-calculate-people.png');
+  background-image: url('@Images/mobile-calculate-people.png');
 }
 .image-2 {
-  background-image: url('~@Images/mobile-calculate-core-service.png');
+  background-image: url('@Images/mobile-calculate-core-service.png');
 }
 .image-3 {
-  background-image: url('~@Images/mobile-calculate-recreation.png');
+  background-image: url('@Images/mobile-calculate-recreation.png');
 }
 .image-4 {
-  background-image: url('~@Images/mobile-calculate-opportunity.png');
+  background-image: url('@Images/mobile-calculate-opportunity.png');
 }
 .image-5 {
-  background-image: url('~@Images/mobile-calculate-shopping.png');
+  background-image: url('@Images/mobile-calculate-shopping.png');
 }
 .image-6 {
-  background-image: url('~@Images/mobile-calculate-transit.png');
+  background-image: url('@Images/mobile-calculate-transit.png');
 }
 
 
@@ -154,12 +154,8 @@
   }
 
   .image-1 {
-    background-image: url('~@Images/calculate-people.png');
+    background-image: url('@Images/calculate-people.png');
     background-repeat: no-repeat;
 
   }
 }
-
-@media (810px <= width) {
-
- }
