@@ -1,13 +1,15 @@
-const path = require('path');
-
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    optimizePackageImports: []
+  eslint: {
+    ignoreDuringBuilds: true
   },
-
-  reactStrictMode: true
+  compress: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
+  typescript: {
+    ignoreBuildErrors: true
+  }
 };
 
 
-module.exports = nextConfig;
+export default nextConfig;

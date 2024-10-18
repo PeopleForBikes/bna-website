@@ -1,7 +1,9 @@
 'use server';
 
 
-async function searchAction(prevState, formData: FormData) {
+type ActionState = { success: boolean; errors: any; data: any };
+
+async function searchAction(state: ActionState, formData: FormData) {
   const term = formData.get('term');
   console.log('search for:', term);
 

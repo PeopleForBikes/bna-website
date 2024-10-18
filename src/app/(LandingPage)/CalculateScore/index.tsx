@@ -8,9 +8,9 @@ import styles from './styles.module.css';
 function CalculateScore() {
   const [selectedTab, setSelectedTab] = useState('tab1');
 
-  const handleClick = e => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    setSelectedTab(e.target.id);
+    setSelectedTab((e.target as HTMLAnchorElement).id);
   };
 
   return (

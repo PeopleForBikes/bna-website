@@ -7,7 +7,7 @@
 
 .hero {
   padding: 0px 20px;
-  background-image: url(~@Images/home-header-2.jpg);
+  background-image: url('~@Images/home-header-2.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -37,7 +37,7 @@
     background-color: white;
     color: black;
 
-    background-image: url(~@Images/web-racing-stripe.png);
+    background-image: url('~@Images/web-racing-stripe.png');
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: top right;
