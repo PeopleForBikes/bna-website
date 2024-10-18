@@ -1,13 +1,14 @@
-const path = require('path');
+import path from 'path';
 
 
+const __dirname = import.meta.dirname;
 const aliasMapping = {
   '@Styles': (filename) => path.resolve(__dirname, `src/assets/styles/${filename}`),
   '@Images': (filename) => path.resolve(__dirname, `src/assets/images/${filename}`)
 };
 
 
-module.exports = {
+export default {
   plugins: {
     'postcss-import': {
       root: path.resolve(__dirname, 'src'),
