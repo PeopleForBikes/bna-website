@@ -113,12 +113,18 @@
 
 .icon-circle-phone {
   margin-right: 16px;
+  width: 25px;
+  height: 24px;
 }
 .icon-envelope {
   margin-right: 16px;
+  width: 25px;
+  height: 20px;
 }
 .icon-location-dot {
   margin-right: 16px;
+  width: 21px;
+  height: 24px;
 }
 
 .social-media {
