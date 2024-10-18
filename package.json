@@ -38,6 +38,6 @@
     "deploy": "next start",
     "lint": "npx eslint . --max-warnings 0 --report-unused-disable-directives",
     "repack": "del node_modules .next pnpm-lock.yaml && pnpm install",
-    "start": "next dev --turbo"
+    "start": "next dev"
   }
 }
