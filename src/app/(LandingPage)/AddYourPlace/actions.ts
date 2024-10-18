@@ -3,6 +3,7 @@
 
 import sql from '@Utils/postgres';
 import addYourPlaceSchema from './schema';
+import { AddYourPlaceFormData } from './types';
 
 
 type Result = {
@@ -13,18 +14,8 @@ type Result = {
   } | null;
   data?: unknown;
 };
-interface AddYourPlaceFormData {
-  firstName: string;
-  lastName: string;
-  occupation: string | null;
-  organization: string | null;
-  email: string;
-  country: string;
-  city: string;
-  region: string | null;
-  fipsCode: string;
-  consent: boolean;
-}
+
+type ActionState = { success: boolean; errors: any; data: any };
 
 const requestToAddYourPlace = async (formData: AddYourPlaceFormData): Promise<void | { errors: boolean }> => {
   try {
@@ -40,8 +31,10 @@ const requestToAddYourPlace = async (formData: AddYourPlaceFormData): Promise<vo
   }
 }
 
-
-async function addYourPlaceAction(prevState: Result, formData: AddYourPlaceFormData): Promise<Result> {
+async function addYourPlaceAction(
+  state: ActionState,
+  formData: AddYourPlaceFormData
+): Promise<ActionState> {
   console.group('ServerAction -- addYourPlace');
   console.info({ formData });
 
@@ -60,13 +53,14 @@ async function addYourPlaceAction(prevState: Result, formData: AddYourPlaceFormD
     console.warn({ validationErrors });
     return {
       success: false,
-      errors: { validation: validationErrors }
+      errors: { validation: validationErrors },
+      data: null
     };
   }
 
   await requestToAddYourPlace(validation.data as AddYourPlaceFormData);
 
-  return { success: true };
+  return { success: true, errors: null, data: null };
 }
 
 async function getCountries(): Promise<string[] | []> {

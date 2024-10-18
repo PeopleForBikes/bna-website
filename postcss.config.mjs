@@ -1,12 +1,13 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const __dirname = import.meta.dirname;
 const aliasMapping = {
   '@Styles': (filename) => path.resolve(__dirname, `src/assets/styles/${filename}`),
   '@Images': (filename) => path.resolve(__dirname, `src/assets/images/${filename}`)
 };
-
 
 export default {
   plugins: {

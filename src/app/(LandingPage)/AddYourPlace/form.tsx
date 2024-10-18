@@ -10,6 +10,7 @@ import addYourPlaceSchema from './schema';
 import addYourPlaceAction, { getCountries } from './actions';
 import ThankYou from './Thankyou';
 import styles from './styles.module.css';
+import { AddYourPlaceFormData } from './types';
 
 
 function Form() {
@@ -18,7 +19,10 @@ function Form() {
     handleAction, handleSubmit,
     actionState, isPending,
     validationErrors, errors
-  } = useForm({
+  } = useForm<
+    { success: boolean; errors: any; data: any },
+    AddYourPlaceFormData
+  >({
     schema: addYourPlaceSchema,
     action: addYourPlaceAction,
     initialActionState: { success: false, errors: null, data: null }
@@ -33,6 +37,23 @@ function Form() {
     fetchData()
   }, []);
 
+  const handleServerAction = async (formData: FormData) => {
+    const rawData = Object.fromEntries(formData.entries());
+    const data: AddYourPlaceFormData = {
+      firstName:    String(rawData.firstName || ''),
+      lastName:     String(rawData.lastName || ''),
+      occupation:   String(rawData.occupation || ''),
+      organization: String(rawData.organization || ''),
+      email:        String(rawData.email || ''),
+      country:      String(rawData.country || ''),
+      city:         String(rawData.city || ''),
+      region:       String(rawData.region || ''),
+      fipsCode:     String(rawData.fipsCode || ''),
+      consent:      Boolean(rawData.consent),
+    };
+    await handleAction(data);
+  };
+
   return (
     <>
       {actionState.success
@@ -43,7 +64,7 @@ function Form() {
           name="addYourPlaceForm"
           className={styles['add-your-place-form']}
           onSubmit={handleSubmit} // client
-          action={handleAction}   // server
+          action={handleServerAction}   // server
         >
           <div>
             <TextInput

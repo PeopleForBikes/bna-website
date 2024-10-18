@@ -2,7 +2,7 @@ import {
   ArrowRight, Bars, CirclePhone, CommunityCare,
   Envelope,
   Facebook, Instagram, LinkedIn, XTwitter, Youtube,
-  LocationDot, LogoBNALight, LogoBNADarkText, ObjectsColumn,
+  LocationDot, LogoBNALight, ObjectsColumn,
   School, Store, TrainSubway, Tree, Xmark
 } from '@Icons';
 

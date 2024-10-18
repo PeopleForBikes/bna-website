@@ -17,15 +17,19 @@ interface UseFormHook<FormState, Payload> {
   setValidationErrors: (errors: Record<string, { message: string }>) => void;
 }
 
-function useForm<State, Payload>({ schema, action, initialActionState }: {
-  schema: ZodObject<any>,
-  action: (
-    formState: Awaited<State>,
-    payload: Payload
-  ) => Promise<any>,
-  initialActionState: Awaited<State>
+function useForm<State extends { success: boolean; errors: any; data: any }, Payload>({
+  schema,
+  action,
+  initialActionState
+}: {
+  schema: ZodObject<any>;
+  action: (state: State, payload: Payload) => Promise<State>;
+  initialActionState: State;
 }): UseFormHook<State, Payload> {
-  const [actionState, handleAction, isPending] = useActionState(action, initialActionState);
+  const [actionState, handleAction, isPending] = useActionState<State, Payload>(
+    action,
+    initialActionState as Awaited<State>
+  );
   const [errors, setErrors] = useState({});
   const [validationErrors, setValidationErrors] = useState({});
 
