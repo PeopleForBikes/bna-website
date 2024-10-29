@@ -7,41 +7,52 @@ import styles from './styles.module.css';
 
 
 async function getTopPlaces() {
-  const data = await sql`
-    WITH latest_scores AS (
+  let data;
+  try {
+    data = await sql`
+      WITH latest_scores AS (
+        SELECT
+          s.city_id,
+          s.score,
+          s.created_at,
+          ROW_NUMBER() OVER (
+            PARTITION BY s.city_id ORDER BY s.created_at DESC
+          ) AS rn
+        FROM
+          public.summary AS s
+      )
       SELECT
-        s.city_id,
-        s.score,
-        s.created_at,
-        ROW_NUMBER() OVER (
-          PARTITION BY s.city_id ORDER BY s.created_at DESC
-        ) AS rn
+        c.name AS city_name,
+        c.state_abbrev,
+        c.country,
+        ls.score
       FROM
-        public.summary AS s
-    )
-    SELECT
-      c.name AS city_name,
-      c.state_abbrev,
-      c.country,
-      ls.score
-    FROM
-      latest_scores AS ls
-      JOIN public.city AS c
-        ON c.id = ls.city_id
-    WHERE
-      ls.rn = 1
-    ORDER BY
-      ls.score DESC
-    LIMIT 10;
-  `;
+        latest_scores AS ls
+        JOIN public.city AS c
+          ON c.id = ls.city_id
+      WHERE
+        ls.rn = 1
+      ORDER BY
+        ls.score DESC
+      LIMIT 10;
+    `;
 
-  return data;
+    return data;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 }
 
 async function TopPlaces() {
   const topPlaces = await getTopPlaces();
-  const topFivePlaces = topPlaces.slice(0, 5);
-  const bottomFivePlaces = topPlaces.slice(5, 10);
+  let topFivePlaces: any[] = [];
+  let bottomFivePlaces: any[] = [];
+
+  if (topPlaces.length > 0) {
+    topFivePlaces = topPlaces.slice(0, 5);
+    bottomFivePlaces = topPlaces.slice(5, 10);
+  }
 
   return (
     <section className={styles['layout']}>
