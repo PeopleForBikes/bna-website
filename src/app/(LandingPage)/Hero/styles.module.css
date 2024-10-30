@@ -5,7 +5,7 @@
 
   position: relative;
 
-  background-image: url('~@Images/hero_w_710.png');
+  background-image: url('../../../assets/images/hero_w_710.png');
   background-repeat: no-repeat;
   background-position: -715px 0px;
 }
