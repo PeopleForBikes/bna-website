@@ -18,7 +18,7 @@
     "postcss-import": "16.1.0",
     "postcss-media-minmax": "5.0.0",
     "postcss-nesting": "13.0.1",
-    "typescript": "5.7.3"
+    "typescript": "5.8.2"
   },
   "dependencies": {
     "ajv": "8.17.1",
