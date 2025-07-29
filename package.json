@@ -30,7 +30,7 @@
     "react-dom": "19.1.0",
     "react-error-boundary": "6.0.0",
     "react-spinners": "0.17.0",
-    "zod": "4.0.5"
+    "zod": "4.0.11"
   },
   "scripts": {
     "build": "pnpm exec next telemetry disable && next build --debug",
