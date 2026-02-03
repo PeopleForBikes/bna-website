@@ -9,7 +9,7 @@
     "@types/node": "25.2.0",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-    "autoprefixer": "10.4.23",
+    "autoprefixer": "10.4.24",
     "babel-plugin-react-compiler": "19.0.0-beta-714736e-20250131",
     "del-cli": "7.0.0",
     "next": "16.1.6",
