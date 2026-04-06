@@ -21,8 +21,8 @@ importers:
         specifier: 16.2.1
         version: 16.2.1(babel-plugin-react-compiler@19.0.0-beta-714736e-20250131)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       postgres:
-        specifier: 3.4.8
-        version: 3.4.8
+        specifier: 3.4.9
+        version: 3.4.9
       react:
         specifier: 19.2.4
         version: 19.2.4
@@ -646,8 +646,8 @@ packages:
     resolution: {integrity: sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postgres@3.4.8:
-    resolution: {integrity: sha512-d+JFcLM17njZaOLkv6SCev7uoLaBtfK86vMUXhW1Z4glPWh4jozno9APvW/XKFJ3CCxVoC7OL38BqRydtu5nGg==}
+  postgres@3.4.9:
+    resolution: {integrity: sha512-GD3qdB0x1z9xgFI6cdRD6xu2Sp2WCOEoe3mtnyB5Ee0XrrL5Pe+e4CCnJrRMnL1zYtRDZmQQVbvOttLnKDLnaw==}
     engines: {node: '>=12'}
 
   presentable-error@0.0.1:
@@ -1228,7 +1228,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postgres@3.4.8: {}
+  postgres@3.4.9: {}
 
   presentable-error@0.0.1: {}
 
