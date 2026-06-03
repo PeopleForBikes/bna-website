@@ -26,7 +26,7 @@
     "ajv-formats": "3.0.1",
     "next": "16.2.7",
     "postgres": "3.4.9",
-    "react": "19.2.6",
+    "react": "19.2.7",
     "react-dom": "19.2.6",
     "react-error-boundary": "6.1.2",
     "react-spinners": "0.17.0",
