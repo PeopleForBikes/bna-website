@@ -36,8 +36,8 @@ importers:
         specifier: 0.17.0
         version: 0.17.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       zod:
-        specifier: 4.4.3
-        version: 4.4.3
+        specifier: 4.5.1
+        version: 4.5.1
     devDependencies:
       '@biomejs/biome':
         specifier: 2.5.10
@@ -939,8 +939,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  zod@4.4.3:
-    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
+  zod@4.5.1:
+    resolution: {integrity: sha512-P3GqeAEOEDqKvafVGLezbg+39YW/ze4xrD4qdS0adOY8eoI3zfjv1PQM4UwQzgT8mZKXEbqtVt8K+ZKGqkMFKg==}
 
 snapshots:
 
@@ -1617,4 +1617,4 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  zod@4.4.3: {}
+  zod@4.5.1: {}
